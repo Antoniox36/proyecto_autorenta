@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.navbar .brand {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 0;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Tarjetas del inicio */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+}
+
+.card .numero {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0 15px;
+    color: #2980b9;
+}
+
+/* Cabecera de listados */
+.header-acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.acciones {
+    display: flex;
+    gap: 8px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #34495e;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-primario { background-color: #2980b9; }
+.btn-secundario { background-color: #7f8c8d; }
+.btn-editar { background-color: #f39c12; }
+.btn-eliminar { background-color: #c0392b; }
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Formularios y confirmación */
+.formulario, .caja-confirmacion {
+    background: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    max-width: 500px;
+}
+
+.formulario p {
+    margin-bottom: 15px;
+}
+
+.formulario label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.formulario input[type="text"],
+.formulario input[type="number"],
+.formulario input[type="date"],
+.formulario select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-botones {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}

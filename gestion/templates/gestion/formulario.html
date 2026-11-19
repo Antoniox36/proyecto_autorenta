@@ -1,0 +1,14 @@
+{% extends 'gestion/base.html' %}
+
+{% block content %}
+<h1>{{ titulo }}</h1>
+
+<form method="post" class="formulario">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-botones">
+        <button type="submit" class="btn btn-primario">Guardar</button>
+        <a href="{% url url_cancelar %}" class="btn btn-secundario">Cancelar</a>
+    </div>
+</form>
+{% endblock %}

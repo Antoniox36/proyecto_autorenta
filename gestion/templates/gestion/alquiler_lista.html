@@ -1,0 +1,40 @@
+{% extends 'gestion/base.html' %}
+
+{% block content %}
+<div class="header-acciones">
+    <h1>Listado de Alquileres</h1>
+    <a href="{% url 'alquiler_crear' %}" class="btn btn-primario">+ Nuevo Alquiler</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Vehículo</th>
+            <th>Fecha Entrega</th>
+            <th>Días</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for alquiler in alquileres %}
+        <tr>
+            <td>{{ alquiler.cliente.nombre }}</td>
+            <td>{{ alquiler.vehiculo.marca }} {{ alquiler.vehiculo.modelo }} ({{ alquiler.vehiculo.placa }})</td>
+            <td>{{ alquiler.fecha_inicio }}</td>
+            <td>{{ alquiler.dias }}</td>
+            <td>{% if alquiler.devuelto %}Devuelto{% else %}Activo{% endif %}</td>
+            <td class="acciones">
+                <a href="{% url 'alquiler_editar' alquiler.pk %}" class="btn btn-editar">Editar</a>
+                <a href="{% url 'alquiler_eliminar' alquiler.pk %}" class="btn btn-eliminar">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No hay alquileres registrados todavía.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

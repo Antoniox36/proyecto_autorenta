@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renta de Vehículos</title>
+    <link rel="stylesheet" href="{% static 'gestion/estilos.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{% url 'inicio' %}" class="brand">AutoRenta</a>
+        <div class="nav-links">
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'cliente_lista' %}">Clientes</a>
+            <a href="{% url 'vehiculo_lista' %}">Vehículos</a>
+            <a href="{% url 'alquiler_lista' %}">Alquileres</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

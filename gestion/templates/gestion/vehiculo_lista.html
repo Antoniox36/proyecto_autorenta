@@ -1,0 +1,38 @@
+{% extends 'gestion/base.html' %}
+
+{% block content %}
+<div class="header-acciones">
+    <h1>Listado de Vehículos</h1>
+    <a href="{% url 'vehiculo_crear' %}" class="btn btn-primario">+ Nuevo Vehículo</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Placa</th>
+            <th>Tarifa / Día</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vehiculo in vehiculos %}
+        <tr>
+            <td>{{ vehiculo.marca }}</td>
+            <td>{{ vehiculo.modelo }}</td>
+            <td>{{ vehiculo.placa }}</td>
+            <td>${{ vehiculo.precio_dia }}</td>
+            <td class="acciones">
+                <a href="{% url 'vehiculo_editar' vehiculo.pk %}" class="btn btn-editar">Editar</a>
+                <a href="{% url 'vehiculo_eliminar' vehiculo.pk %}" class="btn btn-eliminar">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No hay vehículos registrados todavía.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

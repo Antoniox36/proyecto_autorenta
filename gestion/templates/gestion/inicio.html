@@ -1,0 +1,23 @@
+{% extends 'gestion/base.html' %}
+
+{% block content %}
+<h1>Panel de Control - Renta de Vehículos</h1>
+
+<div class="cards">
+    <div class="card">
+        <h3>Clientes</h3>
+        <p class="numero">{{ total_clientes }}</p>
+        <a href="{% url 'cliente_lista' %}" class="btn">Ver Clientes</a>
+    </div>
+    <div class="card">
+        <h3>Vehículos</h3>
+        <p class="numero">{{ total_vehiculos }}</p>
+        <a href="{% url 'vehiculo_lista' %}" class="btn">Ver Vehículos</a>
+    </div>
+    <div class="card">
+        <h3>Alquileres</h3>
+        <p class="numero">{{ total_alquileres }}</p>
+        <a href="{% url 'alquiler_lista' %}" class="btn">Ver Alquileres</a>
+    </div>
+</div>
+{% endblock %}
